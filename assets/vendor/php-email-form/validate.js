@@ -45,6 +45,9 @@
           if(response.result == "success"){
             thisForm.querySelector('.loading').classList.remove('d-block');
             thisForm.querySelector('.sent-message').classList.add('d-block');
+            setInterval(() => {
+              thisForm.querySelector('.sent-message').classList.remove('d-block');
+            }, 2000);
           } else {
             console.error(response);
             displayError(thisForm , "메일 전송에 실패했습니다.");
